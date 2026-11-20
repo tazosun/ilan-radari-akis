@@ -243,6 +243,9 @@ def ilan_kur(detay: str, kurum: str, aciklama: str, tarihler: str, tur: str, alt
         # Kategoriden kesin bilinen şartlar (ilan metni okunamadığı için).
         "minOgrenim": KATEGORI_SARTLARI.get(alt_tur, (None, None))[0],
         "sartNotu": KATEGORI_SARTLARI.get(alt_tur, (None, None))[1],
+        # Sitedeki satırın birebir metni: uygulama, resmî sitenin listesinde bu ilanı bulup
+        # kullanıcının yerine tıklamak için kullanır (PDF yalnızca listeden açılınca gösteriliyor).
+        "siteSatiri": {"kurum": kurum, "aciklama": aciklama, "tarihler": tarihler},
     }
 
 
