@@ -16,6 +16,7 @@ import json
 import re
 import sys
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from datetime import date, datetime, timedelta, timezone
@@ -23,6 +24,7 @@ from datetime import date, datetime, timedelta, timezone
 KAYNAK = "https://kamuilan.sbb.gov.tr/"
 KULLANICI_AJANI = "IlanRadariToplayici/0.1 (+kamu ilan takip uygulamasi)"
 BEKLEME_SN = 1.5  # siteyi yormamak için istekler arası bekleme
+DENEME_SAYISI = 3  # bir kategori isteği 400 alırsa toplam deneme sayısı
 
 # Sitedeki kategori düğmesi -> (uygulamadaki tür, alt tür adı)
 KATEGORILER: dict[str, tuple[str, str]] = {
@@ -228,9 +230,21 @@ def topla() -> dict:
         if dugme not in dugme_metinleri:
             print(f"{alt_tur}: düğme sitede yok, atlandı", file=sys.stderr)
             continue
-        time.sleep(BEKLEME_SN)
-        # Bir tarayıcının göndereceği gibi: son sayfanın form alanları + basılan düğmenin kendi metni.
-        sayfa = oturum.getir({**alanlar, dugme: dugme_metinleri[dugme]})
+        for deneme in range(1, DENEME_SAYISI + 1):
+            time.sleep(BEKLEME_SN * deneme)
+            try:
+                # Bir tarayıcının göndereceği gibi: son sayfanın form alanları + basılan düğmenin kendi metni.
+                sayfa = oturum.getir({**alanlar, dugme: dugme_metinleri[dugme]})
+                break
+            except urllib.error.HTTPError as hata:
+                if hata.code != 400 or deneme == DENEME_SAYISI:
+                    raise
+                # Site birden çok sunucunun arkasında; form bilgisi başka sunucuya düşünce 400 veriyor.
+                # Ana sayfayı yeni bir oturumla açıp düğmeye yeniden bas.
+                print(f"{alt_tur}: HTTP 400, yeni oturumla tekrar ({deneme + 1}/{DENEME_SAYISI})", file=sys.stderr)
+                time.sleep(BEKLEME_SN)
+                oturum = Oturum()
+                alanlar = form_alanlari(oturum.getir())
         yeni_alanlar = form_alanlari(sayfa)
         if "__VIEWSTATE" in yeni_alanlar:
             alanlar = yeni_alanlar
