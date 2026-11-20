@@ -1,6 +1,6 @@
 {
  "surum": 1,
- "guncelleme": "2026-11-20T18:59:54Z",
+ "guncelleme": "2026-11-20T19:26:31Z",
  "kaynak": "T.C. Cumhurbaşkanlığı Strateji ve Bütçe Başkanlığı — kamuilan.sbb.gov.tr",
  "ilanlar": [
   {
@@ -19,7 +19,9 @@
    "basvuruBaslangic": "2026-11-09",
    "sonBasvuru": "2026-11-20",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "lisans",
+   "sartNotu": "A grubu (kariyer meslek) kadrolar lisans mezuniyeti gerektirir; KPSS A grubu puanı ya da kurumun kendi sınavı istenir."
   },
   {
    "id": "sbb-556dc30b7776",
@@ -37,7 +39,9 @@
    "basvuruBaslangic": "2026-11-18",
    "sonBasvuru": "2026-11-20",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": null,
+   "sartNotu": null
   },
   {
    "id": "sbb-9e109d963e7d",
@@ -55,7 +59,9 @@
    "basvuruBaslangic": "2026-11-18",
    "sonBasvuru": "2026-11-20",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": null,
+   "sartNotu": null
   },
   {
    "id": "sbb-c2438cb40011",
@@ -75,7 +81,9 @@
    "basvuruBaslangic": "2026-11-07",
    "sonBasvuru": "2026-11-20",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": null,
+   "sartNotu": null
   },
   {
    "id": "sbb-bf4ae1d99e50",
@@ -93,7 +101,9 @@
    "basvuruBaslangic": "2026-11-06",
    "sonBasvuru": "2026-11-20",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": null,
+   "sartNotu": null
   },
   {
    "id": "sbb-4078781d7849",
@@ -113,7 +123,9 @@
    "basvuruBaslangic": "2026-11-06",
    "sonBasvuru": "2026-11-20",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "doktora",
+   "sartNotu": "Öğretim üyesi kadroları doktora gerektirir (2547 sayılı Kanun). Alan, yabancı dil ve diğer şartlar resmî ilan metninde."
   },
   {
    "id": "sbb-ffe670e8cb3b",
@@ -131,7 +143,9 @@
    "basvuruBaslangic": "2026-11-06",
    "sonBasvuru": "2026-11-20",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "doktora",
+   "sartNotu": "Öğretim üyesi kadroları doktora gerektirir (2547 sayılı Kanun). Alan, yabancı dil ve diğer şartlar resmî ilan metninde."
   },
   {
    "id": "sbb-17cacd41ccaf",
@@ -151,7 +165,9 @@
    "basvuruBaslangic": "2026-11-06",
    "sonBasvuru": "2026-11-20",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "doktora",
+   "sartNotu": "Öğretim üyesi kadroları doktora gerektirir (2547 sayılı Kanun). Alan, yabancı dil ve diğer şartlar resmî ilan metninde."
   },
   {
    "id": "sbb-7db13bd4d061",
@@ -171,7 +187,9 @@
    "basvuruBaslangic": "2026-11-06",
    "sonBasvuru": "2026-11-20",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "doktora",
+   "sartNotu": "Öğretim üyesi kadroları doktora gerektirir (2547 sayılı Kanun). Alan, yabancı dil ve diğer şartlar resmî ilan metninde."
   },
   {
    "id": "sbb-d93554217512",
@@ -191,7 +209,9 @@
    "basvuruBaslangic": "2026-11-06",
    "sonBasvuru": "2026-11-20",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "yuksekLisans",
+   "sartNotu": "Öğretim görevlisi kadroları en az yüksek lisans gerektirir; ALES ve yabancı dil puanı da istenebilir. Ayrıntılar resmî ilan metninde."
   },
   {
    "id": "sbb-edaa2fd40fb2",
@@ -211,7 +231,9 @@
    "basvuruBaslangic": "2026-11-06",
    "sonBasvuru": "2026-11-20",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "lisans",
+   "sartNotu": "Araştırma görevlisi kadroları lisans mezuniyeti ve ALES puanı gerektirir; çoğunda yabancı dil puanı ve lisansüstü öğrencilik de istenir."
   },
   {
    "id": "sbb-8947e5b4e8a8",
@@ -231,7 +253,9 @@
    "basvuruBaslangic": "2026-11-06",
    "sonBasvuru": "2026-11-20",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "lisans",
+   "sartNotu": "Araştırma görevlisi kadroları lisans mezuniyeti ve ALES puanı gerektirir; çoğunda yabancı dil puanı ve lisansüstü öğrencilik de istenir."
   },
   {
    "id": "sbb-d0c8c4dd5530",
@@ -249,7 +273,9 @@
    "basvuruBaslangic": "2026-11-05",
    "sonBasvuru": "2026-11-20",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "lisans",
+   "sartNotu": "Araştırma görevlisi kadroları lisans mezuniyeti ve ALES puanı gerektirir; çoğunda yabancı dil puanı ve lisansüstü öğrencilik de istenir."
   },
   {
    "id": "sbb-557b8ac5b36a",
@@ -267,7 +293,9 @@
    "basvuruBaslangic": "2026-11-16",
    "sonBasvuru": "2026-11-20",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": null,
+   "sartNotu": "Kamu işçi alımlarında genellikle KPSS istenmez; çoğu İŞKUR üzerinden kura ile yapılır."
   },
   {
    "id": "sbb-77459844ebf5",
@@ -287,7 +315,9 @@
    "basvuruBaslangic": "2026-11-06",
    "sonBasvuru": "2026-11-21",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "doktora",
+   "sartNotu": "Öğretim üyesi kadroları doktora gerektirir (2547 sayılı Kanun). Alan, yabancı dil ve diğer şartlar resmî ilan metninde."
   },
   {
    "id": "sbb-ed2c23bb9446",
@@ -307,7 +337,9 @@
    "basvuruBaslangic": "2026-11-06",
    "sonBasvuru": "2026-11-21",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "doktora",
+   "sartNotu": "Öğretim üyesi kadroları doktora gerektirir (2547 sayılı Kanun). Alan, yabancı dil ve diğer şartlar resmî ilan metninde."
   },
   {
    "id": "sbb-ecdcf641520a",
@@ -327,7 +359,9 @@
    "basvuruBaslangic": "2026-11-06",
    "sonBasvuru": "2026-11-21",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "yuksekLisans",
+   "sartNotu": "Öğretim görevlisi kadroları en az yüksek lisans gerektirir; ALES ve yabancı dil puanı da istenebilir. Ayrıntılar resmî ilan metninde."
   },
   {
    "id": "sbb-ccff3c2bf0f6",
@@ -345,7 +379,9 @@
    "basvuruBaslangic": "2026-11-09",
    "sonBasvuru": "2026-11-22",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "lisans",
+   "sartNotu": "A grubu (kariyer meslek) kadrolar lisans mezuniyeti gerektirir; KPSS A grubu puanı ya da kurumun kendi sınavı istenir."
   },
   {
    "id": "sbb-fa6d5b6206e2",
@@ -363,7 +399,9 @@
    "basvuruBaslangic": "2026-11-09",
    "sonBasvuru": "2026-11-22",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "lisans",
+   "sartNotu": "A grubu (kariyer meslek) kadrolar lisans mezuniyeti gerektirir; KPSS A grubu puanı ya da kurumun kendi sınavı istenir."
   },
   {
    "id": "sbb-08e930297154",
@@ -383,7 +421,9 @@
    "basvuruBaslangic": "2026-11-02",
    "sonBasvuru": "2026-11-22",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "lisans",
+   "sartNotu": "A grubu (kariyer meslek) kadrolar lisans mezuniyeti gerektirir; KPSS A grubu puanı ya da kurumun kendi sınavı istenir."
   },
   {
    "id": "sbb-37bb2d976d18",
@@ -401,7 +441,9 @@
    "basvuruBaslangic": "2026-11-02",
    "sonBasvuru": "2026-11-22",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": null,
+   "sartNotu": null
   },
   {
    "id": "sbb-7304fbba4b07",
@@ -419,7 +461,9 @@
    "basvuruBaslangic": "2026-11-09",
    "sonBasvuru": "2026-11-23",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "doktora",
+   "sartNotu": "Öğretim üyesi kadroları doktora gerektirir (2547 sayılı Kanun). Alan, yabancı dil ve diğer şartlar resmî ilan metninde."
   },
   {
    "id": "sbb-471d59a1e4ac",
@@ -439,7 +483,9 @@
    "basvuruBaslangic": "2026-11-09",
    "sonBasvuru": "2026-11-23",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "doktora",
+   "sartNotu": "Öğretim üyesi kadroları doktora gerektirir (2547 sayılı Kanun). Alan, yabancı dil ve diğer şartlar resmî ilan metninde."
   },
   {
    "id": "sbb-ccbe52274ffc",
@@ -459,7 +505,9 @@
    "basvuruBaslangic": "2026-11-09",
    "sonBasvuru": "2026-11-23",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "doktora",
+   "sartNotu": "Öğretim üyesi kadroları doktora gerektirir (2547 sayılı Kanun). Alan, yabancı dil ve diğer şartlar resmî ilan metninde."
   },
   {
    "id": "sbb-a3f7d1378815",
@@ -479,7 +527,9 @@
    "basvuruBaslangic": "2026-11-09",
    "sonBasvuru": "2026-11-23",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "yuksekLisans",
+   "sartNotu": "Öğretim görevlisi kadroları en az yüksek lisans gerektirir; ALES ve yabancı dil puanı da istenebilir. Ayrıntılar resmî ilan metninde."
   },
   {
    "id": "sbb-f28c4d1e8305",
@@ -499,7 +549,9 @@
    "basvuruBaslangic": "2026-11-09",
    "sonBasvuru": "2026-11-23",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "yuksekLisans",
+   "sartNotu": "Öğretim görevlisi kadroları en az yüksek lisans gerektirir; ALES ve yabancı dil puanı da istenebilir. Ayrıntılar resmî ilan metninde."
   },
   {
    "id": "sbb-ccee0be96e7b",
@@ -517,7 +569,9 @@
    "basvuruBaslangic": "2026-11-09",
    "sonBasvuru": "2026-11-23",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "yuksekLisans",
+   "sartNotu": "Öğretim görevlisi kadroları en az yüksek lisans gerektirir; ALES ve yabancı dil puanı da istenebilir. Ayrıntılar resmî ilan metninde."
   },
   {
    "id": "sbb-3d325969c769",
@@ -535,7 +589,9 @@
    "basvuruBaslangic": "2026-11-09",
    "sonBasvuru": "2026-11-23",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "yuksekLisans",
+   "sartNotu": "Öğretim görevlisi kadroları en az yüksek lisans gerektirir; ALES ve yabancı dil puanı da istenebilir. Ayrıntılar resmî ilan metninde."
   },
   {
    "id": "sbb-289a38a71109",
@@ -553,7 +609,9 @@
    "basvuruBaslangic": "2026-11-02",
    "sonBasvuru": "2026-11-23",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": null,
+   "sartNotu": null
   },
   {
    "id": "sbb-e91bb54b6616",
@@ -571,7 +629,9 @@
    "basvuruBaslangic": "2026-11-02",
    "sonBasvuru": "2026-11-23",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": null,
+   "sartNotu": null
   },
   {
    "id": "sbb-9f7a5ac60b33",
@@ -589,7 +649,9 @@
    "basvuruBaslangic": "2026-11-09",
    "sonBasvuru": "2026-11-23",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": null,
+   "sartNotu": null
   },
   {
    "id": "sbb-3129ab067dfb",
@@ -607,7 +669,9 @@
    "basvuruBaslangic": "2026-11-10",
    "sonBasvuru": "2026-11-24",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "yuksekLisans",
+   "sartNotu": "Öğretim görevlisi kadroları en az yüksek lisans gerektirir; ALES ve yabancı dil puanı da istenebilir. Ayrıntılar resmî ilan metninde."
   },
   {
    "id": "sbb-2f53e999c2fc",
@@ -625,7 +689,9 @@
    "basvuruBaslangic": "2026-11-11",
    "sonBasvuru": "2026-11-25",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": null,
+   "sartNotu": null
   },
   {
    "id": "sbb-c558e28d27bf",
@@ -645,7 +711,9 @@
    "basvuruBaslangic": "2026-11-11",
    "sonBasvuru": "2026-11-25",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "doktora",
+   "sartNotu": "Öğretim üyesi kadroları doktora gerektirir (2547 sayılı Kanun). Alan, yabancı dil ve diğer şartlar resmî ilan metninde."
   },
   {
    "id": "sbb-0e906df452ea",
@@ -663,7 +731,9 @@
    "basvuruBaslangic": "2026-11-10",
    "sonBasvuru": "2026-11-25",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "yuksekLisans",
+   "sartNotu": "Öğretim görevlisi kadroları en az yüksek lisans gerektirir; ALES ve yabancı dil puanı da istenebilir. Ayrıntılar resmî ilan metninde."
   },
   {
    "id": "sbb-27f6502d9e31",
@@ -681,7 +751,9 @@
    "basvuruBaslangic": "2026-10-30",
    "sonBasvuru": "2026-11-25",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "yuksekLisans",
+   "sartNotu": "Öğretim görevlisi kadroları en az yüksek lisans gerektirir; ALES ve yabancı dil puanı da istenebilir. Ayrıntılar resmî ilan metninde."
   },
   {
    "id": "sbb-0fb15a671981",
@@ -699,7 +771,9 @@
    "basvuruBaslangic": "2026-11-16",
    "sonBasvuru": "2026-11-27",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": null,
+   "sartNotu": null
   },
   {
    "id": "sbb-840153105883",
@@ -719,7 +793,9 @@
    "basvuruBaslangic": "2026-11-13",
    "sonBasvuru": "2026-11-27",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": null,
+   "sartNotu": null
   },
   {
    "id": "sbb-75d8bb69a627",
@@ -739,7 +815,9 @@
    "basvuruBaslangic": "2026-11-13",
    "sonBasvuru": "2026-11-27",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "doktora",
+   "sartNotu": "Öğretim üyesi kadroları doktora gerektirir (2547 sayılı Kanun). Alan, yabancı dil ve diğer şartlar resmî ilan metninde."
   },
   {
    "id": "sbb-5d6ffeecc40c",
@@ -757,7 +835,9 @@
    "basvuruBaslangic": "2026-11-13",
    "sonBasvuru": "2026-11-27",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "doktora",
+   "sartNotu": "Öğretim üyesi kadroları doktora gerektirir (2547 sayılı Kanun). Alan, yabancı dil ve diğer şartlar resmî ilan metninde."
   },
   {
    "id": "sbb-405697cb44f1",
@@ -775,7 +855,9 @@
    "basvuruBaslangic": "2026-11-23",
    "sonBasvuru": "2026-11-30",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "lisans",
+   "sartNotu": "A grubu (kariyer meslek) kadrolar lisans mezuniyeti gerektirir; KPSS A grubu puanı ya da kurumun kendi sınavı istenir."
   },
   {
    "id": "sbb-fe9b9042569f",
@@ -793,7 +875,9 @@
    "basvuruBaslangic": "2026-11-23",
    "sonBasvuru": "2026-11-30",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "lisans",
+   "sartNotu": "A grubu (kariyer meslek) kadrolar lisans mezuniyeti gerektirir; KPSS A grubu puanı ya da kurumun kendi sınavı istenir."
   },
   {
    "id": "sbb-d5e0b15e5924",
@@ -811,7 +895,9 @@
    "basvuruBaslangic": "2026-11-16",
    "sonBasvuru": "2026-11-30",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": null,
+   "sartNotu": null
   },
   {
    "id": "sbb-f8cf1069ef19",
@@ -829,7 +915,9 @@
    "basvuruBaslangic": "2026-11-18",
    "sonBasvuru": "2026-11-30",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "doktora",
+   "sartNotu": "Öğretim üyesi kadroları doktora gerektirir (2547 sayılı Kanun). Alan, yabancı dil ve diğer şartlar resmî ilan metninde."
   },
   {
    "id": "sbb-2ee580f38254",
@@ -849,7 +937,9 @@
    "basvuruBaslangic": "2026-11-16",
    "sonBasvuru": "2026-11-30",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "doktora",
+   "sartNotu": "Öğretim üyesi kadroları doktora gerektirir (2547 sayılı Kanun). Alan, yabancı dil ve diğer şartlar resmî ilan metninde."
   },
   {
    "id": "sbb-8adfba4e3703",
@@ -867,7 +957,9 @@
    "basvuruBaslangic": "2026-11-16",
    "sonBasvuru": "2026-11-30",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "doktora",
+   "sartNotu": "Öğretim üyesi kadroları doktora gerektirir (2547 sayılı Kanun). Alan, yabancı dil ve diğer şartlar resmî ilan metninde."
   },
   {
    "id": "sbb-1dd7c873c1eb",
@@ -885,7 +977,9 @@
    "basvuruBaslangic": "2026-11-16",
    "sonBasvuru": "2026-11-30",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "doktora",
+   "sartNotu": "Öğretim üyesi kadroları doktora gerektirir (2547 sayılı Kanun). Alan, yabancı dil ve diğer şartlar resmî ilan metninde."
   },
   {
    "id": "sbb-9ce735297cb8",
@@ -903,7 +997,9 @@
    "basvuruBaslangic": "2026-11-16",
    "sonBasvuru": "2026-11-30",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "doktora",
+   "sartNotu": "Öğretim üyesi kadroları doktora gerektirir (2547 sayılı Kanun). Alan, yabancı dil ve diğer şartlar resmî ilan metninde."
   },
   {
    "id": "sbb-4b4d1fad36b7",
@@ -923,7 +1019,9 @@
    "basvuruBaslangic": "2026-11-16",
    "sonBasvuru": "2026-11-30",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "lisans",
+   "sartNotu": "Araştırma görevlisi kadroları lisans mezuniyeti ve ALES puanı gerektirir; çoğunda yabancı dil puanı ve lisansüstü öğrencilik de istenir."
   },
   {
    "id": "sbb-e7b67b11bfd2",
@@ -941,7 +1039,9 @@
    "basvuruBaslangic": "2026-11-16",
    "sonBasvuru": "2026-11-30",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "lisans",
+   "sartNotu": "Araştırma görevlisi kadroları lisans mezuniyeti ve ALES puanı gerektirir; çoğunda yabancı dil puanı ve lisansüstü öğrencilik de istenir."
   },
   {
    "id": "sbb-0660caee63c3",
@@ -959,7 +1059,9 @@
    "basvuruBaslangic": "2026-11-16",
    "sonBasvuru": "2026-11-30",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "lisans",
+   "sartNotu": "Araştırma görevlisi kadroları lisans mezuniyeti ve ALES puanı gerektirir; çoğunda yabancı dil puanı ve lisansüstü öğrencilik de istenir."
   },
   {
    "id": "sbb-369a9503ffd4",
@@ -977,7 +1079,9 @@
    "basvuruBaslangic": "2026-11-02",
    "sonBasvuru": "2026-12-01",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": null,
+   "sartNotu": null
   },
   {
    "id": "sbb-acc0aeeb5963",
@@ -995,7 +1099,9 @@
    "basvuruBaslangic": "2026-11-30",
    "sonBasvuru": "2026-12-02",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": null,
+   "sartNotu": null
   },
   {
    "id": "sbb-a9313b07b7ba",
@@ -1013,7 +1119,9 @@
    "basvuruBaslangic": "2026-11-30",
    "sonBasvuru": "2026-12-02",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": null,
+   "sartNotu": null
   },
   {
    "id": "sbb-e429d5bab26c",
@@ -1033,7 +1141,9 @@
    "basvuruBaslangic": "2026-11-18",
    "sonBasvuru": "2026-12-02",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "doktora",
+   "sartNotu": "Öğretim üyesi kadroları doktora gerektirir (2547 sayılı Kanun). Alan, yabancı dil ve diğer şartlar resmî ilan metninde."
   },
   {
    "id": "sbb-127ebc572913",
@@ -1053,7 +1163,9 @@
    "basvuruBaslangic": "2026-11-18",
    "sonBasvuru": "2026-12-02",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "doktora",
+   "sartNotu": "Öğretim üyesi kadroları doktora gerektirir (2547 sayılı Kanun). Alan, yabancı dil ve diğer şartlar resmî ilan metninde."
   },
   {
    "id": "sbb-7c327d1cc575",
@@ -1073,7 +1185,9 @@
    "basvuruBaslangic": "2026-11-18",
    "sonBasvuru": "2026-12-02",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "doktora",
+   "sartNotu": "Öğretim üyesi kadroları doktora gerektirir (2547 sayılı Kanun). Alan, yabancı dil ve diğer şartlar resmî ilan metninde."
   },
   {
    "id": "sbb-b199cd6d2836",
@@ -1093,7 +1207,9 @@
    "basvuruBaslangic": "2026-11-18",
    "sonBasvuru": "2026-12-02",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "lisans",
+   "sartNotu": "Araştırma görevlisi kadroları lisans mezuniyeti ve ALES puanı gerektirir; çoğunda yabancı dil puanı ve lisansüstü öğrencilik de istenir."
   },
   {
    "id": "sbb-a4faccebae59",
@@ -1111,7 +1227,9 @@
    "basvuruBaslangic": "2026-11-09",
    "sonBasvuru": "2026-12-03",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "lisans",
+   "sartNotu": "A grubu (kariyer meslek) kadrolar lisans mezuniyeti gerektirir; KPSS A grubu puanı ya da kurumun kendi sınavı istenir."
   },
   {
    "id": "sbb-2017ff86540e",
@@ -1129,7 +1247,9 @@
    "basvuruBaslangic": "2026-12-01",
    "sonBasvuru": "2026-12-03",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": null,
+   "sartNotu": null
   },
   {
    "id": "sbb-9fd1cda494cc",
@@ -1149,7 +1269,9 @@
    "basvuruBaslangic": "2026-11-19",
    "sonBasvuru": "2026-12-03",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "lisans",
+   "sartNotu": "Araştırma görevlisi kadroları lisans mezuniyeti ve ALES puanı gerektirir; çoğunda yabancı dil puanı ve lisansüstü öğrencilik de istenir."
   },
   {
    "id": "sbb-f7e5c77da551",
@@ -1167,7 +1289,9 @@
    "basvuruBaslangic": "2026-11-23",
    "sonBasvuru": "2026-12-04",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "lisans",
+   "sartNotu": "A grubu (kariyer meslek) kadrolar lisans mezuniyeti gerektirir; KPSS A grubu puanı ya da kurumun kendi sınavı istenir."
   },
   {
    "id": "sbb-a8419df25fc5",
@@ -1185,7 +1309,9 @@
    "basvuruBaslangic": "2026-11-23",
    "sonBasvuru": "2026-12-04",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "lisans",
+   "sartNotu": "A grubu (kariyer meslek) kadrolar lisans mezuniyeti gerektirir; KPSS A grubu puanı ya da kurumun kendi sınavı istenir."
   },
   {
    "id": "sbb-c734881a68bc",
@@ -1205,7 +1331,9 @@
    "basvuruBaslangic": "2026-11-23",
    "sonBasvuru": "2026-12-04",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "lisans",
+   "sartNotu": "A grubu (kariyer meslek) kadrolar lisans mezuniyeti gerektirir; KPSS A grubu puanı ya da kurumun kendi sınavı istenir."
   },
   {
    "id": "sbb-8c1205b78360",
@@ -1225,7 +1353,9 @@
    "basvuruBaslangic": "2026-11-30",
    "sonBasvuru": "2026-12-04",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": null,
+   "sartNotu": null
   },
   {
    "id": "sbb-98e0dbe7cd01",
@@ -1243,7 +1373,9 @@
    "basvuruBaslangic": "2026-11-30",
    "sonBasvuru": "2026-12-04",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": null,
+   "sartNotu": null
   },
   {
    "id": "sbb-229c98b676a6",
@@ -1261,7 +1393,9 @@
    "basvuruBaslangic": "2026-12-02",
    "sonBasvuru": "2026-12-04",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": null,
+   "sartNotu": null
   },
   {
    "id": "sbb-719003b89ef0",
@@ -1279,7 +1413,9 @@
    "basvuruBaslangic": "2026-11-20",
    "sonBasvuru": "2026-12-04",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "doktora",
+   "sartNotu": "Öğretim üyesi kadroları doktora gerektirir (2547 sayılı Kanun). Alan, yabancı dil ve diğer şartlar resmî ilan metninde."
   },
   {
    "id": "sbb-f2fffcd6e6c8",
@@ -1299,7 +1435,9 @@
    "basvuruBaslangic": "2026-11-20",
    "sonBasvuru": "2026-12-04",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "doktora",
+   "sartNotu": "Öğretim üyesi kadroları doktora gerektirir (2547 sayılı Kanun). Alan, yabancı dil ve diğer şartlar resmî ilan metninde."
   },
   {
    "id": "sbb-5cb164035449",
@@ -1319,7 +1457,9 @@
    "basvuruBaslangic": "2026-11-20",
    "sonBasvuru": "2026-12-04",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "doktora",
+   "sartNotu": "Öğretim üyesi kadroları doktora gerektirir (2547 sayılı Kanun). Alan, yabancı dil ve diğer şartlar resmî ilan metninde."
   },
   {
    "id": "sbb-9914af3da63d",
@@ -1337,7 +1477,9 @@
    "basvuruBaslangic": "2026-11-20",
    "sonBasvuru": "2026-12-04",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "doktora",
+   "sartNotu": "Öğretim üyesi kadroları doktora gerektirir (2547 sayılı Kanun). Alan, yabancı dil ve diğer şartlar resmî ilan metninde."
   },
   {
    "id": "sbb-4c968bcd1720",
@@ -1357,7 +1499,9 @@
    "basvuruBaslangic": "2026-11-20",
    "sonBasvuru": "2026-12-04",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "doktora",
+   "sartNotu": "Öğretim üyesi kadroları doktora gerektirir (2547 sayılı Kanun). Alan, yabancı dil ve diğer şartlar resmî ilan metninde."
   },
   {
    "id": "sbb-0c9799562b10",
@@ -1377,7 +1521,9 @@
    "basvuruBaslangic": "2026-11-20",
    "sonBasvuru": "2026-12-04",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "yuksekLisans",
+   "sartNotu": "Öğretim görevlisi kadroları en az yüksek lisans gerektirir; ALES ve yabancı dil puanı da istenebilir. Ayrıntılar resmî ilan metninde."
   },
   {
    "id": "sbb-22ad2f78b13e",
@@ -1397,7 +1543,9 @@
    "basvuruBaslangic": "2026-11-20",
    "sonBasvuru": "2026-12-04",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "yuksekLisans",
+   "sartNotu": "Öğretim görevlisi kadroları en az yüksek lisans gerektirir; ALES ve yabancı dil puanı da istenebilir. Ayrıntılar resmî ilan metninde."
   },
   {
    "id": "sbb-1c6d77279ce2",
@@ -1417,7 +1565,9 @@
    "basvuruBaslangic": "2026-11-20",
    "sonBasvuru": "2026-12-04",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "yuksekLisans",
+   "sartNotu": "Öğretim görevlisi kadroları en az yüksek lisans gerektirir; ALES ve yabancı dil puanı da istenebilir. Ayrıntılar resmî ilan metninde."
   },
   {
    "id": "sbb-8e3cb63e8c40",
@@ -1437,7 +1587,9 @@
    "basvuruBaslangic": "2026-11-20",
    "sonBasvuru": "2026-12-04",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "yuksekLisans",
+   "sartNotu": "Öğretim görevlisi kadroları en az yüksek lisans gerektirir; ALES ve yabancı dil puanı da istenebilir. Ayrıntılar resmî ilan metninde."
   },
   {
    "id": "sbb-1578b710c105",
@@ -1455,7 +1607,9 @@
    "basvuruBaslangic": "2026-11-20",
    "sonBasvuru": "2026-12-04",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "lisans",
+   "sartNotu": "Araştırma görevlisi kadroları lisans mezuniyeti ve ALES puanı gerektirir; çoğunda yabancı dil puanı ve lisansüstü öğrencilik de istenir."
   },
   {
    "id": "sbb-c2aae6dcdb99",
@@ -1475,7 +1629,9 @@
    "basvuruBaslangic": "2026-11-20",
    "sonBasvuru": "2026-12-05",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": null,
+   "sartNotu": null
   },
   {
    "id": "sbb-6557cf5f9c7e",
@@ -1493,7 +1649,9 @@
    "basvuruBaslangic": "2026-11-30",
    "sonBasvuru": "2026-12-06",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": null,
+   "sartNotu": null
   },
   {
    "id": "sbb-bd28c1393a9f",
@@ -1511,7 +1669,9 @@
    "basvuruBaslangic": "2026-11-23",
    "sonBasvuru": "2026-12-06",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": null,
+   "sartNotu": "Kamu işçi alımlarında genellikle KPSS istenmez; çoğu İŞKUR üzerinden kura ile yapılır."
   },
   {
    "id": "sbb-879efe179257",
@@ -1529,7 +1689,9 @@
    "basvuruBaslangic": "2026-12-01",
    "sonBasvuru": "2026-12-07",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "lisans",
+   "sartNotu": "A grubu (kariyer meslek) kadrolar lisans mezuniyeti gerektirir; KPSS A grubu puanı ya da kurumun kendi sınavı istenir."
   },
   {
    "id": "sbb-8bda565585fc",
@@ -1549,7 +1711,9 @@
    "basvuruBaslangic": "2026-09-25",
    "sonBasvuru": "2026-12-08",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "doktora",
+   "sartNotu": "Öğretim üyesi kadroları doktora gerektirir (2547 sayılı Kanun). Alan, yabancı dil ve diğer şartlar resmî ilan metninde."
   },
   {
    "id": "sbb-1dbea0a90b1c",
@@ -1569,7 +1733,9 @@
    "basvuruBaslangic": "2026-11-30",
    "sonBasvuru": "2026-12-09",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": null,
+   "sartNotu": null
   },
   {
    "id": "sbb-97a68d42f002",
@@ -1587,7 +1753,9 @@
    "basvuruBaslangic": "2026-12-07",
    "sonBasvuru": "2026-12-10",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": null,
+   "sartNotu": null
   },
   {
    "id": "sbb-8714a92c2a15",
@@ -1605,7 +1773,9 @@
    "basvuruBaslangic": "2026-12-09",
    "sonBasvuru": "2026-12-11",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": null,
+   "sartNotu": null
   },
   {
    "id": "sbb-737f108b1952",
@@ -1623,7 +1793,9 @@
    "basvuruBaslangic": "2026-12-07",
    "sonBasvuru": "2026-12-11",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": null,
+   "sartNotu": null
   },
   {
    "id": "sbb-269af929d01c",
@@ -1641,7 +1813,9 @@
    "basvuruBaslangic": "2026-12-09",
    "sonBasvuru": "2026-12-11",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": null,
+   "sartNotu": null
   },
   {
    "id": "sbb-82b3c74a70a9",
@@ -1659,7 +1833,9 @@
    "basvuruBaslangic": "2026-11-30",
    "sonBasvuru": "2026-12-11",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": null,
+   "sartNotu": null
   },
   {
    "id": "sbb-2fb8c63a3ce4",
@@ -1677,7 +1853,9 @@
    "basvuruBaslangic": "2026-12-01",
    "sonBasvuru": "2026-12-14",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "lisans",
+   "sartNotu": "A grubu (kariyer meslek) kadrolar lisans mezuniyeti gerektirir; KPSS A grubu puanı ya da kurumun kendi sınavı istenir."
   },
   {
    "id": "sbb-4b4440fbff6f",
@@ -1695,7 +1873,9 @@
    "basvuruBaslangic": "2026-11-25",
    "sonBasvuru": "2026-12-14",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": null,
+   "sartNotu": null
   },
   {
    "id": "sbb-82cdff47d8b3",
@@ -1713,7 +1893,9 @@
    "basvuruBaslangic": "2026-12-07",
    "sonBasvuru": "2026-12-18",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": "lisans",
+   "sartNotu": "A grubu (kariyer meslek) kadrolar lisans mezuniyeti gerektirir; KPSS A grubu puanı ya da kurumun kendi sınavı istenir."
   },
   {
    "id": "sbb-7e122fee99c0",
@@ -1731,7 +1913,9 @@
    "basvuruBaslangic": "2026-12-16",
    "sonBasvuru": "2026-12-18",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": null,
+   "sartNotu": null
   },
   {
    "id": "sbb-b2f297e9e5e7",
@@ -1749,7 +1933,9 @@
    "basvuruBaslangic": "2026-12-14",
    "sonBasvuru": "2026-12-18",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": null,
+   "sartNotu": null
   },
   {
    "id": "sbb-5af79c606aea",
@@ -1767,7 +1953,9 @@
    "basvuruBaslangic": "2026-12-04",
    "sonBasvuru": "2026-12-18",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": null,
+   "sartNotu": null
   },
   {
    "id": "sbb-fc2c41eed618",
@@ -1785,7 +1973,9 @@
    "basvuruBaslangic": "2026-11-20",
    "sonBasvuru": "2026-12-21",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": null,
+   "sartNotu": null
   },
   {
    "id": "sbb-16bf4d2efa3f",
@@ -1803,7 +1993,9 @@
    "basvuruBaslangic": "2026-12-21",
    "sonBasvuru": "2026-12-23",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": null,
+   "sartNotu": null
   },
   {
    "id": "sbb-2d23ee1e3031",
@@ -1821,7 +2013,9 @@
    "basvuruBaslangic": "2026-12-21",
    "sonBasvuru": "2026-12-23",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": null,
+   "sartNotu": null
   },
   {
    "id": "sbb-09e45685b301",
@@ -1839,7 +2033,9 @@
    "basvuruBaslangic": "2026-12-21",
    "sonBasvuru": "2026-12-25",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": null,
+   "sartNotu": null
   },
   {
    "id": "sbb-df58fc2c6bf9",
@@ -1857,7 +2053,9 @@
    "basvuruBaslangic": "2026-12-14",
    "sonBasvuru": "2026-12-25",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": null,
+   "sartNotu": null
   },
   {
    "id": "sbb-eaadec49df92",
@@ -1875,7 +2073,9 @@
    "basvuruBaslangic": "2026-12-21",
    "sonBasvuru": "2027-01-05",
    "kaynakURL": "https://kamuilan.sbb.gov.tr/",
-   "sartlar": []
+   "sartlar": [],
+   "minOgrenim": null,
+   "sartNotu": null
   }
  ]
 }
