@@ -1,4 +1,4 @@
-# İlan Radarı — ilan akışı
+# Alım Var — ilan akışı
 
 Kamu personel alım ilanlarını T.C. Cumhurbaşkanlığı Strateji ve Bütçe Başkanlığı'nın resmî
 ilan sitesinden ([kamuilan.sbb.gov.tr](https://kamuilan.sbb.gov.tr)) okuyup tek bir JSON

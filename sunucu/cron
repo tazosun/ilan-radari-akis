@@ -1,3 +1,3 @@
-# İlan Radarı toplayıcısı — "ilan" kullanıcısının crontab'ı (crontab sunucu/cron ile yüklenir).
+# Alım Var toplayıcısı — "ilan" kullanıcısının crontab'ı (crontab sunucu/cron ile yüklenir).
 # Saatte bir, 7. dakikada çalışır.
 7 * * * * $HOME/ilan-radari-akis/sunucu/calistir.sh >> $HOME/toplayici.log 2>&1

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""İlan Radarı toplayıcısı.
+"""Alım Var toplayıcısı.
 
 Strateji ve Bütçe Başkanlığı'nın resmî "Kamu Personeli Alım İlanları" sitesindeki
 (kamuilan.sbb.gov.tr) açık ilanları kategori kategori okur ve uygulamanın beklediği
@@ -22,7 +22,7 @@ import urllib.request
 from datetime import date, datetime, timedelta, timezone
 
 KAYNAK = "https://kamuilan.sbb.gov.tr/"
-KULLANICI_AJANI = "IlanRadariToplayici/0.1 (+kamu ilan takip uygulamasi)"
+KULLANICI_AJANI = "AlimVarToplayici/0.1 (+kamu ilan takip uygulamasi)"
 BEKLEME_SN = 1.5  # siteyi yormamak için istekler arası bekleme
 DENEME_SAYISI = 3  # bir kategori isteği 400 alırsa toplam deneme sayısı
 

@@ -1,5 +1,5 @@
 #!/bin/bash
-# İlan Radarı — sunucuda saatlik toplayıcı.
+# Alım Var — sunucuda saatlik toplayıcı.
 # cron tarafından saatte bir çalıştırılır (bkz. sunucu/cron). İlanları toplar,
 # değiştiyse akis/ilanlar.json'u GitHub'a gönderir. Çıktı: ~/toplayici.log
 set -euo pipefail
