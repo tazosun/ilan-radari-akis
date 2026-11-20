@@ -6,7 +6,8 @@ dosyasında toplar.
 
 - `toplayici/topla.py` — toplayıcı (yalnızca Python standart kütüphanesi)
 - `akis/ilanlar.json` — üretilen akış
-- `.github/workflows/ilan-topla.yml` — saatte bir çalıştırır, ilanlar değiştiyse kaydeder
+- `sunucu/calistir.sh` ve `sunucu/cron` — Türkiye'deki sunucuda saatte bir çalışır, ilanlar değiştiyse akışı gönderir
+- `.github/workflows/ilan-topla.yml` — yalnızca elle deneme; kaynak site GitHub sunucularını engelliyor (403)
 
 Elle çalıştırmak için:
 

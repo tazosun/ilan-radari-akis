@@ -110,6 +110,12 @@ def form_alanlari(sayfa: str) -> dict[str, str]:
     return alanlar
 
 
+def dugmeler(sayfa: str) -> dict[str, str]:
+    """Sayfadaki kategori düğmeleri: ad -> üzerinde yazan metin."""
+    return {ad: html.unescape(deger) for ad, deger in
+            re.findall(r'<input type="submit" name="(Button\d+)" value="([^"]+)"', sayfa)}
+
+
 LISTE_OGESI = re.compile(
     r"<a href='(ilanDetay\.aspx\?kod=[^']+)'[^>]*>.*?"
     r"<p class='alt_p1'>(.*?)</p>\s*<p class='alt_p2'>(.*?)<em[^>]*>\s*\((.*?)\)\s*</em>",
@@ -216,10 +222,18 @@ def topla() -> dict:
     if "__VIEWSTATE" not in alanlar:
         raise RuntimeError("Ana sayfanın form alanları bulunamadı; site yapısı değişmiş olabilir.")
 
+    dugme_metinleri = dugmeler(ana)
     ilanlar: dict[str, dict] = {}
     for dugme, (tur, alt_tur) in KATEGORILER.items():
+        if dugme not in dugme_metinleri:
+            print(f"{alt_tur}: düğme sitede yok, atlandı", file=sys.stderr)
+            continue
         time.sleep(BEKLEME_SN)
-        sayfa = oturum.getir({**alanlar, dugme: "x"})
+        # Bir tarayıcının göndereceği gibi: son sayfanın form alanları + basılan düğmenin kendi metni.
+        sayfa = oturum.getir({**alanlar, dugme: dugme_metinleri[dugme]})
+        yeni_alanlar = form_alanlari(sayfa)
+        if "__VIEWSTATE" in yeni_alanlar:
+            alanlar = yeni_alanlar
         ogeler = liste_oku(sayfa)
         print(f"{alt_tur}: {len(ogeler)} ilan", file=sys.stderr)
         for detay, kurum, aciklama, tarihler in ogeler:

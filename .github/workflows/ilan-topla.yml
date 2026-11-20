@@ -1,9 +1,8 @@
 name: İlanları topla
 
+# Kaynak site GitHub sunucularını engelliyor (403), bu yüzden saatlik çalışma
+# Türkiye'deki sunucuda (sunucu/calistir.sh). Bu görev yalnızca elle denemek için duruyor.
 on:
-  schedule:
-    # Saatte bir, 7. dakikada (GitHub yoğunluğu nedeniyle birkaç dakika gecikebilir).
-    - cron: "7 * * * *"
   workflow_dispatch: {}
 
 permissions:
