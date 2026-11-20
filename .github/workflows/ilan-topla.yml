@@ -1,0 +1,49 @@
+name: İlanları topla
+
+on:
+  schedule:
+    # Saatte bir, 7. dakikada (GitHub yoğunluğu nedeniyle birkaç dakika gecikebilir).
+    - cron: "7 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ilan-topla
+  cancel-in-progress: false
+
+jobs:
+  topla:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Toplayıcıyı çalıştır
+        run: python3 -I toplayici/topla.py /tmp/yeni.json
+
+      - name: İlanlar değiştiyse kaydet
+        run: |
+          mkdir -p akis
+          degisti=$(python3 -I - <<'EOF'
+          import json, os
+          yeni = json.load(open("/tmp/yeni.json"))["ilanlar"]
+          eski = json.load(open("akis/ilanlar.json"))["ilanlar"] if os.path.exists("akis/ilanlar.json") else None
+          print("evet" if yeni != eski else "hayir")
+          EOF
+          )
+          if [ "$degisti" = "evet" ]; then
+            cp /tmp/yeni.json akis/ilanlar.json
+            git config user.name "ilan-radari-bot"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add akis/ilanlar.json
+            git commit -m "İlanlar güncellendi"
+            git push
+          else
+            echo "İlanlarda değişiklik yok."
+          fi
