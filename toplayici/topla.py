@@ -185,6 +185,33 @@ def aciklama_coz(aciklama: str) -> tuple[int | None, str, bool] | None:
     return kadro, baslik, duzeltme
 
 
+# Kategorinin kendisinden kesin bilinen asgari öğrenim şartı ve kullanıcıya gösterilecek not.
+# Yalnızca mevzuattan kesin olanlar: emin olmadığımız kategorilerde asgari öğrenim yazmıyoruz.
+# Öğrenim değerleri uygulamadaki Ogrenim türüyle aynı olmalı.
+KATEGORI_SARTLARI: dict[str, tuple[str | None, str]] = {
+    "Öğretim Üyesi": ("doktora",
+        "Öğretim üyesi kadroları doktora gerektirir (2547 sayılı Kanun). Alan, yabancı dil ve "
+        "diğer şartlar resmî ilan metninde."),
+    "Öğretim Görevlisi": ("yuksekLisans",
+        "Öğretim görevlisi kadroları en az yüksek lisans gerektirir; ALES ve yabancı dil puanı da "
+        "istenebilir. Ayrıntılar resmî ilan metninde."),
+    "Araştırma Görevlisi": ("lisans",
+        "Araştırma görevlisi kadroları lisans mezuniyeti ve ALES puanı gerektirir; çoğunda yabancı "
+        "dil puanı ve lisansüstü öğrencilik de istenir."),
+    "A Grubu Memur (Kariyer Meslek)": ("lisans",
+        "A grubu (kariyer meslek) kadrolar lisans mezuniyeti gerektirir; KPSS A grubu puanı ya da "
+        "kurumun kendi sınavı istenir."),
+    "Sürekli İşçi": (None,
+        "Kamu işçi alımlarında genellikle KPSS istenmez; çoğu İŞKUR üzerinden kura ile yapılır."),
+    "Geçici İşçi": (None,
+        "Kamu işçi alımlarında genellikle KPSS istenmez; çoğu İŞKUR üzerinden kura ile yapılır."),
+    "Engelli İşçi": (None,
+        "Engelli işçi alımları İŞKUR üzerinden, engelli kontenjanından yapılır."),
+    "Eski Hükümlü İşçi": (None,
+        "Eski hükümlü işçi alımları İŞKUR üzerinden, eski hükümlü kontenjanından yapılır."),
+}
+
+
 def ilan_kur(detay: str, kurum: str, aciklama: str, tarihler: str, tur: str, alt_tur: str,
              bugun: date) -> dict | None:
     aralik = tarih_coz(tarihler, bugun)
@@ -213,6 +240,9 @@ def ilan_kur(detay: str, kurum: str, aciklama: str, tarihler: str, tur: str, alt
         "sonBasvuru": son.isoformat(),
         "kaynakURL": KAYNAK,
         "sartlar": [],
+        # Kategoriden kesin bilinen şartlar (ilan metni okunamadığı için).
+        "minOgrenim": KATEGORI_SARTLARI.get(alt_tur, (None, None))[0],
+        "sartNotu": KATEGORI_SARTLARI.get(alt_tur, (None, None))[1],
     }
 
 
