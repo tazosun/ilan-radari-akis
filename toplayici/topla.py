@@ -13,6 +13,7 @@ import hashlib
 import html
 import http.cookiejar
 import json
+import os
 import re
 import sys
 import time
@@ -299,6 +300,18 @@ def topla() -> dict:
     if not ilanlar:
         raise RuntimeError("Hiç ilan okunamadı; eski akış korunacak.")
 
+    # ÖSYM merkezî yerleştirme (KPSS tercih) kılavuzları: tercih süresi açık olanlar.
+    try:
+        # Sunucuda "python -I" ile çalışır; o kipte betiğin klasörü arama yolunda değildir.
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import osym
+        for rehber in osym.guncel_rehberler(bugun):
+            ilanlar[rehber["id"]] = rehber
+            print(f"ÖSYM rehberi eklendi: {rehber['baslik']} ({len(rehber['rehber']['kadrolar'])} kadro)",
+                  file=sys.stderr)
+    except Exception as hata:  # ÖSYM'ye ulaşılamaması SBB ilanlarını engellemesin
+        print(f"ÖSYM rehberleri okunamadı: {hata}", file=sys.stderr)
+
     return {
         "surum": 1,
         "guncelleme": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
@@ -311,7 +324,8 @@ def main() -> None:
     cikti = sys.argv[1] if len(sys.argv) > 1 else "ilanlar.json"
     akis = topla()
     with open(cikti, "w", encoding="utf-8") as f:
-        json.dump(akis, f, ensure_ascii=False, indent=1)
+        # Kadro tabloları büyük; akışı boşluksuz yaz (telefon her saat indiriyor).
+        json.dump(akis, f, ensure_ascii=False, separators=(",", ":"))
     print(f"{len(akis['ilanlar'])} ilan yazıldı: {cikti}", file=sys.stderr)
 
 
