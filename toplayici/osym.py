@@ -36,12 +36,10 @@ AYLAR = {"ocak": 1, "şubat": 2, "mart": 3, "nisan": 4, "mayıs": 5, "haziran": 
 
 # Tablo numarası -> öğrenim düzeyi (uygulamadaki Ogrenim adlarıyla aynı)
 DUZEYLER = {"1": "lise", "2": "onlisans", "3": "lisans"}
-# Dosya adı parçası -> düzey (nitelik kodları ve mezun olunan program listeleri için)
-NITELIK_DOSYASI = {"ortaogretim-nitelik": "lise", "onlisans-nitelik": "onlisans", "lisans-nitelik": "lisans",
-                   "ozelkosullar": "ozel"}
-PROGRAM_DOSYASI = {"ortaogretim-alandal": "lise", "onlisansprg": "onlisans", "lisansprg": "lisans"}
 
 ISTIHDAM = ("KİT SÖZLEŞMELİ PERSONEL", "SÖZLEŞMELİ PERSONEL", "MEMUR", "İŞÇİ", "SÜREKLİ İŞÇİ", "GEÇİCİ PERSONEL")
+# Sütuna sığmayıp bölünen istihdam şekli ("KİT SÖZLEŞMELİ" üst satırda, "PERSONEL" ana satırda).
+ISTIHDAM_PARCA = ("PERSONEL",)
 ILLER = {
     "ADANA", "ADIYAMAN", "AFYONKARAHİSAR", "AĞRI", "AKSARAY", "AMASYA", "ANKARA", "ANTALYA", "ARDAHAN", "ARTVİN",
     "AYDIN", "BALIKESİR", "BARTIN", "BATMAN", "BAYBURT", "BİLECİK", "BİNGÖL", "BİTLİS", "BOLU", "BURDUR", "BURSA",
@@ -128,8 +126,8 @@ def ana_satir_coz(govde: str) -> dict | None:
     # Baştan: kurum ve istihdam şekli (uzun kurum adlarında aralarında tek boşluk kalabilir).
     kurum, istihdam, i = "", "", 0
     for i, t in enumerate(metinler):
-        for ist in ISTIHDAM:
-            if t == ist or t.endswith(" " + ist):
+        for ist in ISTIHDAM + ISTIHDAM_PARCA:
+            if t == ist or (ist not in ISTIHDAM_PARCA and t.endswith(" " + ist)):
                 kurum = birlestir(*metinler[:i], t[: -len(ist)])
                 istihdam = ist
                 break
@@ -154,6 +152,12 @@ def ana_satir_coz(govde: str) -> dict | None:
         kalan.pop()
     il = kalan.pop(0) if kalan else ""
     ilce = kalan[0] if kalan else ""
+    # İl ile ilçe arasında tek boşluk kalmışsa ("KAHRAMANMARAŞ MERKEZ") ayır.
+    if il not in ILLER:
+        for il_adi in sorted(ILLER, key=len, reverse=True):
+            if il.startswith(il_adi + " "):
+                il, ilce = il_adi, il[len(il_adi) + 1:]
+                break
     return {"kurum": kurum, "istihdam": istihdam, "unvan": unvan, "il": il, "ilce": ilce,
             "adet": adet, "nitelikler": kodlar}
 
@@ -172,10 +176,10 @@ def tablo_coz(yazi: str, duzey: str) -> list[dict]:
         # Kurum ve unvan sütunlarının ekrandaki başlangıcı (taşan satırları eşlemek için).
         ps = parcalar(s)
         bas = {"kurum": govde_bas}
-        for p, t in ps:
-            if t == k["unvan"] or t.startswith(k["unvan"]):
-                if p > govde_bas:
-                    bas["unvan"] = p
+        for ad in ("istihdam", "unvan"):
+            for p, t in ps:
+                if p > max(bas.values()) and (t == k[ad] or t.endswith(" " + k[ad]) or t.startswith(k[ad])):
+                    bas[ad] = p + (len(t) - len(k[ad]) if t.endswith(" " + k[ad]) else 0)
                     break
         k["kod"] = m.group(1)
         k["duzey"] = duzey
@@ -192,25 +196,21 @@ def tablo_coz(yazi: str, duzey: str) -> list[dict]:
             if abs(bas[hedef] - p) > 12:
                 continue
             k[hedef] = birlestir(t, k[hedef]) if once else birlestir(k[hedef], t)
+            if hedef == "istihdam" and k[hedef] not in ISTIHDAM:
+                k[hedef] = next((i for i in ISTIHDAM if k[hedef].endswith(i)), k[hedef])
 
     sonuc: list[dict] = []
     onceki_no = -1
     for sira, (no, k, bas) in enumerate(kayitlar):
-        bosluk = [satirlar[j] for j in range(onceki_no + 1, no) if satirlar[j].strip()]
-        alt, ust = bosluk_bol(bosluk, sira > 0)
-        if sira > 0:
-            for s in alt:
-                ekle(kayitlar[sira - 1][1], kayitlar[sira - 1][2], s, once=False)
-        for s in ust:
+        # Taşan hücre satırları ana satırın üstünde kalır (ana satır hücrenin altına hizalı).
+        ust = [satirlar[j] for j in range(onceki_no + 1, no) if satirlar[j].strip()]
+        for s in reversed(ust):
             ekle(k, bas, s, once=True)
         onceki_no = no
         sonuc.append(k)
-    # Son kaydın altına taşan satırlar (sayfa sonu yoksa) – en fazla iki satır.
-    if kayitlar:
-        no, k, bas = kayitlar[-1]
-        for s in [x for x in satirlar[no + 1: no + 3] if x.strip()]:
-            if not re.search(r"Aranan Nitelikleri", s):
-                ekle(k, bas, s, once=False)
+    for k in sonuc:
+        if k["istihdam"] in ISTIHDAM_PARCA:
+            k["istihdam"] = "SÖZLEŞMELİ PERSONEL"  # üst parça bulunamadıysa en yaygın biçim
     return sonuc
 
 
@@ -329,7 +329,10 @@ def donem_oku(donem: str) -> dict | None:
     tablolar = {DUZEYLER[m.group(1)]: u for u in pdfler if (m := re.search(r"/tablo(\d)_", u))}
     if not tablolar:
         return None
-    kilavuz = next((u for u in pdfler if "/kilavuz_" in u), None)
+    # Aynı sayfada eski yıllara ait bağlantılar da olabiliyor; yalnızca tablolarla aynı klasöre bak.
+    klasor = next(iter(tablolar.values())).rsplit("/", 1)[0]
+    pdfler = [u for u in pdfler if u.rsplit("/", 1)[0] == klasor]
+    kilavuz = next((u for u in pdfler if "kilavuz" in u.rsplit("/", 1)[1].lower()), None)
     tarihler = tercih_tarihleri(pdf_yazi(getir(kilavuz, True))) if kilavuz else None
     if not tarihler:
         print(f"{donem}: tercih tarihleri okunamadı", file=sys.stderr)
@@ -342,14 +345,22 @@ def donem_oku(donem: str) -> dict | None:
         kadrolar += k
     nitelikler: dict[str, dict] = {}
     programlar: dict[str, dict[str, str]] = {}
+
+    def dosya_duzeyi(ad: str) -> str:
+        if "onl" in ad:
+            return "onlisans"
+        if "ort" in ad or "alandal" in ad:
+            return "lise"
+        return "lisans"
+
     for u in pdfler:
-        ad = u.rsplit("/", 1)[1].split("_")[0].lower()
-        for parca, duzey in NITELIK_DOSYASI.items():
-            if ad == parca:
-                nitelikler.update(nitelik_coz(pdf_yazi(getir(u, True))))
-        for parca, duzey in PROGRAM_DOSYASI.items():
-            if ad.endswith(parca) and not (parca == "lisansprg" and "nlisans" in ad.lower()):
-                programlar[duzey] = program_coz(pdf_yazi(getir(u, True)))
+        ad = u.rsplit("/", 1)[1].lower()
+        if "tablo" in ad or "kilavuz" in ad or "yasakli" in ad:
+            continue
+        if "nitelik" in ad or "ozel" in ad:
+            nitelikler.update(nitelik_coz(pdf_yazi(getir(u, True))))
+        elif "mezun" in ad or "prg" in ad or "alandal" in ad:
+            programlar[dosya_duzeyi(ad)] = program_coz(pdf_yazi(getir(u, True)))
     # Yalnızca tablolarda geçen nitelik kodlarını tut.
     kullanilan = {k for kd in kadrolar for k in kd["nitelikler"]}
     nitelikler = {k: v for k, v in nitelikler.items() if k in kullanilan}
