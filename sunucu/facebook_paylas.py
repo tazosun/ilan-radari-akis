@@ -28,7 +28,7 @@ AKIS = os.path.join(DEPO, "akis", "ilanlar.json")
 KAYIT = os.path.join(DEPO, "akis", "facebook-paylasilanlar.json")
 GRAPH = "https://graph.facebook.com/v21.0"
 APP_STORE = "https://apps.apple.com/tr/app/id6837452333"
-ENFAZLA = 15          # bir sabahta en fazla gönderi
+ENFAZLA = int(os.environ.get("ALIMVAR_FB_ADET") or 15)  # bir çalışmada en fazla gönderi
 ARALIK_SN = 45        # gönderiler arası bekleme (Facebook'a art arda yüklenmemek için)
 TR = timezone(timedelta(hours=3))
 
