@@ -11,6 +11,9 @@ on:
         description: "Paylaşmadan sadece gönderileri yazdır"
         type: boolean
         default: true
+      adet:
+        description: "En fazla kaç gönderi"
+        default: "1"
 
 permissions:
   contents: write
@@ -30,8 +33,9 @@ jobs:
           python-version: "3.12"
       - name: Paylaş
         env:
-          ALIMVAR_FB_SAYFA: ${{ secrets.ALIMVAR_FB_SAYFA }}
+          ALIMVAR_FB_SAYFA: "1419226681279133"   # Alım Var sayfası (gizli değil)
           ALIMVAR_FB_ANAHTAR: ${{ secrets.ALIMVAR_FB_ANAHTAR }}
+          ALIMVAR_FB_ADET: ${{ inputs.adet }}
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.deneme }}" = "true" ]; then
             python3 -I sunucu/facebook_paylas.py --deneme
