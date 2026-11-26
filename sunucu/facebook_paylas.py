@@ -1,18 +1,17 @@
 #!/usr/bin/env python3
 """Alım Var Facebook sayfasına ilan paylaşır: her ilan ayrı bir gönderi.
 
-Her sabah 06:00'da (Türkiye saati) GitHub Actions ile çalışır (.github/workflows/facebook.yml).
-Daha önce paylaşılmamış ve başvurusu hâlâ açık ilanları paylaşır; bir çalışmada en
-fazla ENFAZLA ilan paylaşılır, kalanlar ertesi sabaha kalır.
+Günde bir ilan, saat 06:00'da (Türkiye saati). Betik her gün GitHub Actions ile çalışır
+(.github/workflows/facebook.yml) ve yeni ilanları Facebook'un kendi zamanlayıcısıyla ileriki
+günlerin 06:00'sına planlar. Yayın gününde başvurusunun bitmesine 15 günden fazla kalan ilanlar alınır.
 
 Sayfa kimliği ve erişim anahtarı ortam değişkenlerinden gelir (GitHub'da "secret" olarak saklanır):
     ALIMVAR_FB_SAYFA, ALIMVAR_FB_ANAHTAR
 Paylaşılanların kaydı: akis/facebook-paylasilanlar.json (iş akışı depoya geri yazar).
 
 Kullanım:
-    python3 facebook_paylas.py            # paylaş
-    python3 facebook_paylas.py --deneme   # paylaşmadan gönderileri yazdır
-    python3 facebook_paylas.py --deneme 1 # ilk gönderiyi yazdır
+    python3 facebook_paylas.py            # planla (bugünün gönderisi yoksa birini hemen paylaşır)
+    python3 facebook_paylas.py --deneme   # paylaşmadan planı yazdır
 """
 import json
 import os
@@ -21,15 +20,17 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
-from datetime import date, datetime, timedelta, timezone
+from datetime import date, datetime, time as dtime, timedelta, timezone
 
 DEPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 AKIS = os.path.join(DEPO, "akis", "ilanlar.json")
 KAYIT = os.path.join(DEPO, "akis", "facebook-paylasilanlar.json")
 GRAPH = "https://graph.facebook.com/v21.0"
 APP_STORE = "https://apps.apple.com/tr/app/id6837452333"
-ENFAZLA = int(os.environ.get("ALIMVAR_FB_ADET") or 15)  # bir çalışmada en fazla gönderi
-ARALIK_SN = 45        # gönderiler arası bekleme (Facebook'a art arda yüklenmemek için)
+ENFAZLA = int(os.environ.get("ALIMVAR_FB_ADET") or 30)  # bir çalışmada en fazla planlanacak gönderi
+KALAN_GUN = 15       # yayın gününde başvurunun bitmesine bundan fazla gün kalmış olmalı
+UFUK_GUN = 25        # en fazla bu kadar gün sonrasına planla (Facebook sınırı 30 gün)
+ARALIK_SN = 5         # istekler arası bekleme
 TR = timezone(timedelta(hours=3))
 
 TURLER = {
@@ -93,54 +94,75 @@ def yaz(yol, veri):
     os.replace(gecici, yol)
 
 
-def paylas(sayfa_id, anahtar, mesaj):
-    veri = urllib.parse.urlencode({"message": mesaj, "link": APP_STORE, "access_token": anahtar}).encode()
+def paylas(sayfa_id, anahtar, mesaj, zaman=None):
+    """Gönderiyi hemen yayınlar; zaman verilirse Facebook'ta o ana planlar."""
+    alanlar = {"message": mesaj, "link": APP_STORE, "access_token": anahtar}
+    if zaman is not None:
+        alanlar.update(published="false", scheduled_publish_time=str(int(zaman.timestamp())))
+    veri = urllib.parse.urlencode(alanlar).encode()
     istek = urllib.request.Request(f"{GRAPH}/{sayfa_id}/feed", data=veri, method="POST")
     with urllib.request.urlopen(istek, timeout=60) as y:
         return json.load(y).get("id")
 
 
+def plan_yap(ilanlar, kayit, simdi):
+    """Her güne bir ilan: kayıttaki son günden sonraki günlere 06:00 yerleştirir.
+
+    Bir ilan ancak yayın gününde başvurusunun bitmesine KALAN_GUN'den fazla varsa alınır.
+    Son başvurusu yakın olan önce gelir. Bugün gönderi yoksa bugünkü ilan hemen paylaşılır
+    (06:00 geçmediyse 06:00'ya planlanır)."""
+    bugun = simdi.date()
+    dolu = {date.fromisoformat(k["tarih"][:10]) for k in kayit.values() if k.get("tarih")}
+    gun = max([bugun] + [d + timedelta(days=1) for d in dolu if d >= bugun])
+    adaylar = sorted((i for i in ilanlar if i["id"] not in kayit),
+                     key=lambda i: (i["sonBasvuru"], i["id"]))
+    plan = []
+    for ilan in adaylar:
+        if (gun - bugun).days > UFUK_GUN:
+            break
+        son = date.fromisoformat(ilan["sonBasvuru"][:10])
+        if (son - gun).days <= KALAN_GUN:
+            continue  # o gün yayınlansa bitmesine 15 günden az kalır
+        saat = datetime.combine(gun, dtime(6, 0), TR)
+        plan.append((ilan, None if saat <= simdi + timedelta(minutes=15) else saat, gun))
+        gun += timedelta(days=1)
+    return plan
+
+
 def main():
     deneme = "--deneme" in sys.argv
-    sinir = int(sys.argv[sys.argv.index("--deneme") + 1]) if deneme and len(sys.argv) > sys.argv.index("--deneme") + 1 else ENFAZLA
-    bugun = datetime.now(TR).date()
+    simdi = datetime.now(TR)
     ilanlar = oku(AKIS, {}).get("ilanlar", [])
     kayit = oku(KAYIT, {})
-    adaylar = [i for i in ilanlar
-               if i["id"] not in kayit and date.fromisoformat(i["sonBasvuru"][:10]) >= bugun]
-    # Son başvurusu en yakın olan önce: okuyan başvurmaya yetişsin.
-    adaylar.sort(key=lambda i: (i["sonBasvuru"], i["id"]))
-    secilen = adaylar[:sinir]
-    print(f"=== {datetime.now(TR):%Y-%m-%d %H:%M} · {len(adaylar)} paylaşılmamış ilan, {len(secilen)} paylaşılacak ===")
+    plan = plan_yap(ilanlar, kayit, simdi)[:ENFAZLA]
+    print(f"=== {simdi:%Y-%m-%d %H:%M} · {len(plan)} ilan planlanacak (günde 1, saat 06:00) ===")
+    for ilan, saat, gun in plan:
+        print(f"{gun} {'hemen' if saat is None else '06:00'} · son başvuru {ilan['sonBasvuru'][:10]} · {ilan['kurum']} · {ilan['baslik']}")
     if deneme:
-        for i in secilen:
-            print("-" * 40); print(gonderi(i, bugun))
+        if plan:
+            print("-" * 40); print(gonderi(plan[0][0], plan[0][2]))
         return
-    ayar = {"sayfa_id": os.environ.get("ALIMVAR_FB_SAYFA", ""), "anahtar": os.environ.get("ALIMVAR_FB_ANAHTAR", "")}
-    if not ayar["anahtar"] or not ayar["sayfa_id"]:
+    sayfa, anahtar = os.environ.get("ALIMVAR_FB_SAYFA", ""), os.environ.get("ALIMVAR_FB_ANAHTAR", "")
+    if not sayfa or not anahtar:
         sys.exit("ALIMVAR_FB_SAYFA ve ALIMVAR_FB_ANAHTAR tanımlı değil.")
-    # GitHub zamanlayıcısı erken başlatırsa 06:00'yı bekle.
-    simdi = datetime.now(TR)
-    hedef = simdi.replace(hour=6, minute=0, second=0, microsecond=0)
-    if "--bekle" in sys.argv and simdi < hedef and (hedef - simdi).total_seconds() < 3600:
-        time.sleep((hedef - simdi).total_seconds())
-    for n, ilan in enumerate(secilen):
+    for n, (ilan, saat, gun) in enumerate(plan):
         if n:
             time.sleep(ARALIK_SN)
         try:
-            gid = paylas(ayar["sayfa_id"], ayar["anahtar"], gonderi(ilan, bugun))
+            gid = paylas(sayfa, anahtar, gonderi(ilan, gun), saat)
         except urllib.error.HTTPError as e:
             hata = e.read().decode(errors="replace")[:300]
             print(f"HATA {e.code} {ilan['id']}: {hata}")
             if e.code in (400, 401, 403) and ("OAuthException" in hata or "permission" in hata.lower()):
                 sys.exit("Erişim anahtarı geçersiz ya da yetkisi yok; paylaşım durduruldu.")
-            continue
-        except Exception as e:  # ağ hatası vb.: bu ilanı yarın tekrar dene
+            break  # sıradaki günler kaymasın: kalanlar bir sonraki çalışmada planlanır
+        except Exception as e:  # ağ hatası vb.
             print(f"HATA {ilan['id']}: {e}")
-            continue
-        kayit[ilan["id"]] = {"gonderi": gid, "tarih": datetime.now(TR).isoformat(timespec="seconds")}
+            break
+        kayit[ilan["id"]] = {"gonderi": gid, "tarih": (saat or datetime.now(TR)).isoformat(timespec="seconds"),
+                             "durum": "paylaşıldı" if saat is None else "planlandı"}
         yaz(KAYIT, kayit)
-        print(f"Paylaşıldı: {ilan['kurum']} · {ilan['baslik']} -> {gid}")
+        print(f"{'Paylaşıldı' if saat is None else 'Planlandı ' + gun.isoformat()}: {ilan['kurum']} · {ilan['baslik']} -> {gid}")
 
 
 if __name__ == "__main__":
