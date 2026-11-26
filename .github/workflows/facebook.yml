@@ -1,19 +1,17 @@
 name: Facebook paylaşımı
 
-# Her sabah 06:00 (Türkiye saati) yeni ilanları Alım Var Facebook sayfasında paylaşır.
-# GitHub zamanlayıcısı birkaç dakika geç kalabildiği için 05:45'te başlar; betik 06:00'yı bekler.
+# Alım Var Facebook sayfası: günde bir ilan, 06:00 (Türkiye saati).
+# Her gün yeni ilanları Facebook'un zamanlayıcısıyla ileriki günlerin 06:00'sına planlar;
+# GitHub geç kalsa ya da bir gün atlasa da planlı gönderiler saatinde çıkar.
 on:
   schedule:
     - cron: "45 2 * * *"   # 02:45 UTC = 05:45 TR
   workflow_dispatch:
     inputs:
       deneme:
-        description: "Paylaşmadan sadece gönderileri yazdır"
+        description: "Paylaşmadan sadece planı yazdır"
         type: boolean
         default: true
-      adet:
-        description: "En fazla kaç gönderi"
-        default: "1"
 
 permissions:
   contents: write
@@ -35,14 +33,11 @@ jobs:
         env:
           ALIMVAR_FB_SAYFA: "1419226681279133"   # Alım Var sayfası (gizli değil)
           ALIMVAR_FB_ANAHTAR: ${{ secrets.ALIMVAR_FB_ANAHTAR }}
-          ALIMVAR_FB_ADET: ${{ inputs.adet }}
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.deneme }}" = "true" ]; then
             python3 -I sunucu/facebook_paylas.py --deneme
-          elif [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            python3 -I sunucu/facebook_paylas.py
           else
-            python3 -I sunucu/facebook_paylas.py --bekle
+            python3 -I sunucu/facebook_paylas.py
           fi
       - name: Paylaşılanları kaydet
         if: always()
